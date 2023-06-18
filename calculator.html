@@ -11,22 +11,33 @@
 <body>
     <div class="container">
         <h1>簡單計算機</h1>
-        <label for="num1">數字1：</label>
-        <input type="number" id="num1"><br><br>
-        <label for="num2">數字2：</label>
-        <input type="number" id="num2"><br><br>
-        <button onclick="calculate()">計算</button><br><br>
-        <label for="result">結果：</label>
-        <input type="text" id="result" readonly>
+        <label for="A1">A1：</label>
+        <input type="number" id="A1" oninput="calculate()"><br><br>
+        <label for="A2">A2：</label>
+        <input type="number" id="A2" oninput="calculate()"><br><br>
+        <label for="A3">A3：</label>
+        <input type="number" id="A3" oninput="calculate()"><br><br>
+        <label for="B1">B1：</label>
+        <input type="text" id="B1" readonly><br><br>
+        <label for="B2">B2：</label>
+        <input type="text" id="B2" readonly><br><br>
+        <label for="B3">B3：</label>
+        <input type="text" id="B3" readonly>
     </div>
 
     <script>
         function calculate() {
-            var num1 = parseFloat(document.getElementById("num1").value);
-            var num2 = parseFloat(document.getElementById("num2").value);
-            var result = num1 + num2; // 這裡是計算的邏輯，你可以根據需求更改
+            var A1 = parseFloat(document.getElementById("A1").value);
+            var A2 = parseFloat(document.getElementById("A2").value);
+            var A3 = parseFloat(document.getElementById("A3").value);
 
-            document.getElementById("result").value = result;
+            var B1 = A1 * 5;
+            var B2 = A2 * 10;
+            var B3 = A3 * 20;
+
+            document.getElementById("B1").value = B1;
+            document.getElementById("B2").value = B2;
+            document.getElementById("B3").value = B3;
         }
     </script>
 </body>
