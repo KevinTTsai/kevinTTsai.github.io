@@ -11,33 +11,39 @@
 <body>
     <div class="container">
         <h1>簡單計算機</h1>
-        <label for="A4">A4：</label>
-        <select id="A4" onchange="displayImage()">
-            <option value="C1">C1</option>
-            <option value="C2">C2</option>
-            <option value="C3">C3</option>
+        <label for="A1">A1：</label>
+        <select id="A1" onchange="calculate()">
+            <option value="0">選擇數字</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <!-- 在這裡繼續添加需要的選項 -->
         </select><br><br>
-        <img id="image" src="" alt="選擇圖片">
+        <label for="A2">A2：</label>
+        <input type="number" id="A2" oninput="calculate()"><br><br>
+        <label for="A3">A3：</label>
+        <input type="number" id="A3" oninput="calculate()"><br><br>
+        <label for="B1">B1：</label>
+        <input type="text" id="B1" readonly><br><br>
+        <label for="B2">B2：</label>
+        <input type="text" id="B2" readonly><br><br>
+        <label for="B3">B3：</label>
+        <input type="text" id="B3" readonly>
     </div>
 
     <script>
-        function displayImage() {
-            var selectedOption = document.getElementById("A4").value;
-            var image = document.getElementById("image");
+        function calculate() {
+            var A1 = parseFloat(document.getElementById("A1").value);
+            var A2 = parseFloat(document.getElementById("A2").value);
+            var A3 = parseFloat(document.getElementById("A3").value);
 
-            switch (selectedOption) {
-                case "C1":
-                    image.src = "C1.JPG";
-                    break;
-                case "C2":
-                    image.src = "C2.JPG";
-                    break;
-                case "C3":
-                    image.src = "C3.JPG";
-                    break;
-                default:
-                    image.src = ""; // 預設不顯示圖片
-            }
+            var B1 = A1 * 5;
+            var B2 = A2 * 10 + B1;
+            var B3 = A3 * 20;
+
+            document.getElementById("B1").value = B1;
+            document.getElementById("B2").value = B2;
+            document.getElementById("B3").value = B3;
         }
     </script>
 </body>
