@@ -11,22 +11,33 @@
 <body>
     <div class="container">
         <h1>簡單計算機</h1>
-        <label for="num1">數字1：</label>
-        <input type="number" id="num1"><br><br>
-        <label for="num2">數字2：</label>
-        <input type="number" id="num2"><br><br>
-        <button onclick="calculate()">計算</button><br><br>
-        <label for="result">結果：</label>
-        <input type="text" id="result" readonly>
+        <label for="A4">A4：</label>
+        <select id="A4" onchange="displayImage()">
+            <option value="C1">C1</option>
+            <option value="C2">C2</option>
+            <option value="C3">C3</option>
+        </select><br><br>
+        <img id="image" src="" alt="選擇圖片">
     </div>
 
     <script>
-        function calculate() {
-            var num1 = parseFloat(document.getElementById("num1").value);
-            var num2 = parseFloat(document.getElementById("num2").value);
-            var result = num1 + num2; // 這裡是計算的邏輯，你可以根據需求更改
+        function displayImage() {
+            var selectedOption = document.getElementById("A4").value;
+            var image = document.getElementById("image");
 
-            document.getElementById("result").value = result;
+            switch (selectedOption) {
+                case "C1":
+                    image.src = "PIC/C1.JPG";
+                    break;
+                case "C2":
+                    image.src = "PIC/C2.JPG";
+                    break;
+                case "C3":
+                    image.src = "PIC/C3.JPG";
+                    break;
+                default:
+                    image.src = ""; // 預設不顯示圖片
+            }
         }
     </script>
 </body>
