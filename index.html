@@ -9,36 +9,9 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>簡單計算機</h1>
-        <label for="A4">A4：</label>
-        <select id="A4" onchange="displayImage()">
-            <option value="C1">C1</option>
-            <option value="C2">C2</option>
-            <option value="C3">C3</option>
-        </select><br><br>
-        <img id="image" src="" alt="選擇圖片">
-    </div>
 
-    <script>
-        function displayImage() {
-            var selectedOption = document.getElementById("A4").value;
-            var image = document.getElementById("image");
+    <h1>顯示圖片</h1>
+    <img src="PIC/C1.JPG" alt="C1圖片">
 
-            switch (selectedOption) {
-                case "C1":
-                    image.src = "/blob/main/C1.jpg";
-                    break;
-                case "C2":
-                    image.src = "/blob/main/C2.jpg";
-                    break;
-                case "C3":
-                    image.src = "/blob/main/C3.jpg";
-                    break;
-                default:
-                    image.src = ""; // 預設不顯示圖片
-            }
-        }
-    </script>
 </body>
 </html>
