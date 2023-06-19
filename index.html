@@ -23,20 +23,20 @@
     <script>
         function displayImage() {
             var selectedOption = document.getElementById("A4").value;
+            var image = document.getElementById("image");
 
             switch (selectedOption) {
                 case "C1":
-                    <text="C1"/>;
-                    <img src="C1.jpg" alt="C1圖片" />;
+                    image.src = "C1.JPG";
                     break;
                 case "C2":
-                    <img src="C2.jpg" alt="C2圖片" />;
+                    image.src = "C2.JPG";
                     break;
                 case "C3":
-                    <img src="C3.jpg" alt="C3圖片" />;
+                    image.src = "C3.JPG";
                     break;
                 default:
-                    <img src="" />; // 預設不顯示圖片
+                    image.src = ""; // 預設不顯示圖片
             }
         }
     </script>
